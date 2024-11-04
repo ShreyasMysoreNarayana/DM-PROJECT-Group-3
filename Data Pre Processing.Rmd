@@ -1,0 +1,240 @@
+
+# Load necessary libraries
+```{r}
+library(dplyr)
+library(tidyr)
+library(readr)
+library(lubridate)
+
+```
+# Step 1: Read Data Files
+```{r}
+genome_scores <- read.csv("genome_scores.csv")
+genome_tags <- read.csv("genome_tags.csv")
+link <- read.csv("link.csv")
+tag <- read.csv("tag.csv")
+movie <- read.csv("movie.csv")
+ratings <- read.csv("rating.csv")
+```
+
+# Step 2: Handle Missing Values
+# Check for NAs in each dataframe and handle accordingly
+```{r}
+summary(genome_scores)
+summary(genome_tags)
+summary(link)
+summary(tag)
+summary(movie)
+summary(ratings)
+```
+
+# List of all data frames
+```{r}
+
+data_list <- list(
+  genome_scores = genome_scores,
+  genome_tags = genome_tags,
+  link = link,
+  tag = tag,
+  movie = movie,
+  ratings = ratings
+)
+```
+
+# Check missing values for each data frame in the list
+#1. GENOME_SCORES
+```{r}
+# Count missing values in each column
+colSums(is.na(genome_scores))
+
+# Find the rows with missing values
+which(is.na(genome_scores), arr.ind = TRUE)
+```
+
+#2. GENOME_TAGS
+```{r}
+
+# Count the total number of missing values in the dataframe
+sum(is.na(genome_tags))
+
+# Count missing values in each column
+colSums(is.na(genome_tags))
+
+# Find the rows with missing values
+which(is.na(genome_tags), arr.ind = TRUE)
+```
+
+#3. LINK
+```{r}
+# Count the total number of missing values in the dataframe
+sum(is.na(link))
+
+# Count missing values in each column
+colSums(is.na(link))
+
+# Find the rows with missing values
+which(is.na(link), arr.ind = TRUE)
+```
+
+#4. MOVIE
+```{r}
+# Count the total number of missing values in the dataframe
+sum(is.na(movie))
+
+# Count missing values in each column
+colSums(is.na(movie))
+
+# Find the rows with missing values
+which(is.na(movie), arr.ind = TRUE)
+```
+
+#5. RATINGS
+```{r}
+# Count the total number of missing values in the dataframe
+sum(is.na(ratings))
+
+# Count missing values in each column
+colSums(is.na(ratings))
+
+# Find the rows with missing values
+which(is.na(ratings), arr.ind = TRUE)
+```
+
+#6. TAG
+```{r}
+# Count the total number of missing values in the dataframe
+sum(is.na(tag))
+
+# Count missing values in each column
+colSums(is.na(tag))
+
+# Find the rows with missing values
+which(is.na(tag), arr.ind = TRUE)
+```
+#Since tthe TmdbID is used to retervie the movie descriptions it makes no sense to performing imputing as still there would be no descriptions for those movies, Rather than removing those rows and missing out on those movies in the dataset we can better assign a default value for the tmdbid and then while connecting it to the API we can have a trigger for that particular values saying there is no description for this particular movie. Since the maximum value in the tmdbID is 421510 so we can assign something out of the range of these value like -1 as a default value.
+```{r}
+# Assign -1 to missing values in `tmdbId`
+link$tmdbId[is.na(link$tmdbId)] <- -1
+```
+
+#Lets view the rows where we assigned -1 as the default value
+```{r}
+# Filter rows where `tmdbId` is -1
+filtered_df <- link[link$tmdbId == -1, ]
+
+# Display the first 5 rows of the filtered dataset
+print(head(filtered_df))
+```
+
+#Now to handle the missing values in the tag file we can actually remove the values as the no of rows with the missing values are 16 and that is less than 1% of the data. But if we want to retain those 16 rows as well we can replace the tag with the title of the movie which is still a relevant info interms of movie tag which will be used for search optimisation.
+```{r}
+# Find indices with missing tags
+missing_indices <- which(is.na(tag$tag))
+
+# Loop to replace missing tags
+for (i in missing_indices) {
+  movie_id <- tag$movieId[i]
+  movie_title <- movie$title[movie$movieId == movie_id]
+  tag$tag[i] <- movie_title
+}
+
+# Display the rows where the changes were made
+modified_rows <- tag[missing_indices, ]
+
+# Print the first 5 rows of modified_rows
+print(head(modified_rows))
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+

@@ -1,0 +1,114 @@
+
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(readr)
+library(lubridate)
+```
+
+```{r}
+genome_scores <- read.csv("genome_scores.csv")
+genome_tags <- read.csv("genome_tags.csv")
+link <- read.csv("link.csv")
+tag <- read.csv("tag.csv")
+movie <- read.csv("movie.csv")
+ratings <- read.csv("rating.csv")
+```
+
+
+
+```{r}
+# Count missing values in each column
+colSums(is.na(genome_scores))
+
+# Find the rows with missing values
+which(is.na(genome_scores), arr.ind = TRUE)
+```
+
+
+```{r}
+
+# Count the total number of missing values in the dataframe
+sum(is.na(genome_tags))
+
+# Count missing values in each column
+colSums(is.na(genome_tags))
+
+# Find the rows with missing values
+which(is.na(genome_tags), arr.ind = TRUE)
+```
+
+
+```{r}
+# Count the total number of missing values in the dataframe
+sum(is.na(link))
+
+# Count missing values in each column
+colSums(is.na(link))
+
+# Find the rows with missing values
+which(is.na(link), arr.ind = TRUE)
+```
+
+
+```{r}
+# Count the total number of missing values in the dataframe
+sum(is.na(movie))
+
+# Count missing values in each column
+colSums(is.na(movie))
+
+# Find the rows with missing values
+which(is.na(movie), arr.ind = TRUE)
+```
+
+
+```{r}
+# Count the total number of missing values in the dataframe
+sum(is.na(ratings))
+
+# Count missing values in each column
+colSums(is.na(ratings))
+
+# Find the rows with missing values
+which(is.na(ratings), arr.ind = TRUE)
+```
+
+
+```{r}
+# Count the total number of missing values in the dataframe
+sum(is.na(tag))
+
+# Count missing values in each column
+colSums(is.na(tag))
+
+# Find the rows with missing values
+which(is.na(tag), arr.ind = TRUE)
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
