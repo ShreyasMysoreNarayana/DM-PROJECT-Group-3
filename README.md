@@ -4,14 +4,15 @@ Welcome to the Movie Recommendation System project! 🎬
 
 This repository contains the code and methodology to build a recommendation engine using the MovieLens dataset, providing personalized movie recommendations based on user preferences, past ratings, and collaborative insights.
 
-🌟 Project Overview
+🌟 Project Overview:
+
 The objective of this project is to develop a recommendation engine capable of generating tailored movie recommendations. Using machine learning and data mining techniques, this system can predict which movies users may enjoy based on their previous interactions and preferences.
 
 Features
 
-•	Dataset: MovieLens dataset with 20 million ratings, including metadata, genres, and user tags.
-•	Algorithms: Collaborative filtering, content-based filtering, and hybrid models.
-•	Evaluation: Custom similarity-based scoring for accurate recommendations.
+    •	Dataset: MovieLens dataset with 20 million ratings, including metadata, genres, and user tags.
+    •	Algorithms: Collaborative filtering, content-based filtering, and hybrid models.
+    •	Evaluation: Custom similarity-based scoring for accurate recommendations.
 
 📂 Dataset
 
@@ -20,7 +21,7 @@ We’re using the MovieLens 20M Dataset, which contains:
 •	Information on user preferences, tags, genres, and more.
 This rich dataset enables the application of various recommendation algorithms, each taking a unique approach to understanding and predicting user preferences.
 
-🔍 Methodology
+🔍 Methodology:
 
 1.	Data Loading and Preprocessing
     o	Import datasets, merge as needed, and handle missing values.
@@ -33,7 +34,8 @@ This rich dataset enables the application of various recommendation algorithms, 
     o	Custom similarity-based scoring to gauge accuracy and effectiveness.
     o	Assess model performance through metrics like precision, recall, and mean squared error (MSE).
 
-📊 Project Structure
+📊 Project Structure:
+
 •	Data: movie.csv, rating.csv, tag.csv, link.csv, genome_tags.csv, genome_score.csv - the main datasets used in this project.
 •	Scripts: Core R and Python scripts for data processing, model training, and evaluation.
 •	Notebooks: Contains exploratory data analysis (EDA) and model experimentation.
@@ -46,13 +48,13 @@ To run this project, you’ll need:
 •	R Libraries: dplyr, ggplot2, recommenderlab, tidyr
 •	Python Libraries: pandas, numpy, scikit-learn, matplotlib
 
-Installation
-Clone the repository and install necessary packages.
-bash
-Copy code
-git clone https://github.com/ShreyasMysoreNarayana/DM-PROJECT.git
-cd DM-PROJECT
-Running the Code
+Installation:
+    - Clone the repository and install necessary packages.
+    - bash
+    - Copy code
+    - git clone https://github.com/ShreyasMysoreNarayana/DM-PROJECT.git
+    - cd DM-PROJECT
+    - Running the Code
 
 Open the R scripts or Jupyter notebooks to explore:
 •	data_processing.R: Loads and cleans datasets.
