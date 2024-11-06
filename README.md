@@ -8,11 +8,13 @@ This repository contains the code and methodology to build a recommendation engi
 The objective of this project is to develop a recommendation engine capable of generating tailored movie recommendations. Using machine learning and data mining techniques, this system can predict which movies users may enjoy based on their previous interactions and preferences.
 
 Features
+
 •	Dataset: MovieLens dataset with 20 million ratings, including metadata, genres, and user tags.
 •	Algorithms: Collaborative filtering, content-based filtering, and hybrid models.
 •	Evaluation: Custom similarity-based scoring for accurate recommendations.
 
 📂 Dataset
+
 We’re using the MovieLens 20M Dataset, which contains:
 •	20 million ratings and 465,564 tag applications across 27,278 movies.
 •	Information on user preferences, tags, genres, and more.
