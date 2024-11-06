@@ -8,63 +8,60 @@ This repository contains the code and methodology to build a recommendation engi
 
 The objective of this project is to develop a recommendation engine capable of generating tailored movie recommendations. Using machine learning and data mining techniques, this system can predict which movies users may enjoy based on their previous interactions and preferences.
 
-Features
-
-    •Dataset: MovieLens dataset with 20 million ratings, including metadata, genres, and user tags.
-    •Algorithms: Collaborative filtering, content-based filtering, and hybrid models.
-    •Evaluation: Custom similarity-based scoring for accurate recommendations.
+Features:<br>
+•Dataset: MovieLens dataset with 20 million ratings, including metadata, genres, and user tags.<br>
+•Algorithms: Collaborative filtering, content-based filtering, and hybrid models.<br>
+•Evaluation: Custom similarity-based scoring for accurate recommendations.<br>
 
 📂 Dataset
 
-We’re using the MovieLens 20M Dataset, which contains:
-
-•	20 million ratings and 465,564 tag applications across 27,278 movies.
-•	Information on user preferences, tags, genres, and more.
+We’re using the MovieLens 20M Dataset, which contains:<br>
+•	20 million ratings and 465,564 tag applications across 27,278 movies.<br>
+•	Information on user preferences, tags, genres, and more.<br>
 
 This rich dataset enables the application of various recommendation algorithms, each taking a unique approach to understanding and predicting user preferences.
 
 🔍 Methodology:
 
-1.	Data Loading and Preprocessing
-    o	Import datasets, merge as needed, and handle missing values.
-    o	Clean data and format columns for compatibility with modeling.
-2.	Algorithm Selection
-    o	Collaborative Filtering: Recommends movies based on similar users’ preferences.
-    o	Content-Based Filtering: Uses movie metadata (e.g., genre) to recommend similar items.
-    o	Hybrid Model: Combines collaborative and content-based methods for more robust recommendations.
-3.	Evaluation
-    o	Custom similarity-based scoring to gauge accuracy and effectiveness.
-    o	Assess model performance through metrics like precision, recall, and mean squared error (MSE).
+1.	Data Loading and Preprocessing<br>
+    o	Import datasets, merge as needed, and handle missing values.<br>
+    o	Clean data and format columns for compatibility with modeling.<br>
+2.	Algorithm Selection<br>
+    o	Collaborative Filtering: Recommends movies based on similar users’ preferences.<br>
+    o	Content-Based Filtering: Uses movie metadata (e.g., genre) to recommend similar items.<br>
+    o	Hybrid Model: Combines collaborative and content-based methods for more robust recommendations.<br>
+3.	Evaluation<br>
+    o	Custom similarity-based scoring to gauge accuracy and effectiveness.<br>
+    o	Assess model performance through metrics like precision, recall, and mean squared error (MSE).<br>
 
-📊 Project Structure:
+📊 Project Structure:<br>
+•	Data: movie.csv, rating.csv, tag.csv, link.csv, genome_tags.csv, genome_score.csv - the main datasets used in this project.<br>
+•	Scripts: Core R and Python scripts for data processing, model training, and evaluation.<br>
+•	Notebooks: Contains exploratory data analysis (EDA) and model experimentation.<br>
 
-•	Data: movie.csv, rating.csv, tag.csv, link.csv, genome_tags.csv, genome_score.csv - the main datasets used in this project.
-•	Scripts: Core R and Python scripts for data processing, model training, and evaluation.
-•	Notebooks: Contains exploratory data analysis (EDA) and model experimentation.
+💻 Getting Started<br>
+Prerequisites<br>
+To run this project, you’ll need:<br>
+•	R (Version 4.0 or later)<br>
+•	Python (Optional, for cross-verification or additional analysis)<br>
+•	R Libraries: dplyr, ggplot2, recommenderlab, tidyr<br>
+•	Python Libraries: pandas, numpy, scikit-learn, matplotlib<br>
 
-💻 Getting Started
-Prerequisites
-To run this project, you’ll need:
-•	R (Version 4.0 or later)
-•	Python (Optional, for cross-verification or additional analysis)
-•	R Libraries: dplyr, ggplot2, recommenderlab, tidyr
-•	Python Libraries: pandas, numpy, scikit-learn, matplotlib
+Installation:<br>
+    - Clone the repository and install necessary packages.<br>
+    - bash<br>
+    - Copy code<br>
+    - git clone https://github.com/ShreyasMysoreNarayana/DM-PROJECT.git<br>
+    - cd DM-PROJECT<br>
+    - Running the Code<br>
 
-Installation:
-    - Clone the repository and install necessary packages.
-    - bash
-    - Copy code
-    - git clone https://github.com/ShreyasMysoreNarayana/DM-PROJECT.git
-    - cd DM-PROJECT
-    - Running the Code
-
-Open the R scripts or Jupyter notebooks to explore:
-•	data_processing.R: Loads and cleans datasets.
-•	collaborative_filtering.R: Builds collaborative filtering models.
-•	content_based_filtering.R: Develops content-based models using movie features.
+Open the R scripts or Jupyter notebooks to explore:<br>
+•	data_processing.R: Loads and cleans datasets.<br>
+•	collaborative_filtering.R: Builds collaborative filtering models.<br>
+•	content_based_filtering.R: Develops content-based models using movie features.<br>
 
 Copy code
-# Example: Running collaborative filtering in R
+### Example: Running collaborative filtering in R
 source("collaborative_filtering.R")
 
 🚀 Usage
