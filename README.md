@@ -1,4 +1,4 @@
-Movie Recommendation System - Data Mining Project
+# Movie Recommendation System - Data Mining Project
 
 Welcome to the Movie Recommendation System project! 🎬 This repository contains the code and methodology to build a recommendation engine using the MovieLens dataset, providing personalized movie recommendations based on user preferences, past ratings, and collaborative insights.
 
