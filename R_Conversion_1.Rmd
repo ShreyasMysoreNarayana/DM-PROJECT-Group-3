@@ -1,0 +1,113 @@
+
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+# Load the datasets
+file_path1 <- "C:/My Space/College files/sem3/Data Mining/project/archive (2)/genome_scores.csv"
+file_path2 <- "C:/My Space/College files/sem3/Data Mining/project/archive (2)/genome_tags.csv"
+file_path3 <- "C:/My Space/College files/sem3/Data Mining/project/archive (2)/link.csv"
+file_path4 <- "C:/My Space/College files/sem3/Data Mining/project/archive (2)/movie.csv"
+file_path5 <- "C:/My Space/College files/sem3/Data Mining/project/archive (2)/rating.csv"
+file_path6 <- "C:/My Space/College files/sem3/Data Mining/project/archive (2)/tag.csv"
+
+
+data_movie <- read.csv(file_path4)
+data_rating <- read.csv(file_path5)
+data_tag <- read.csv(file_path6)
+data_link <- read.csv(file_path3)
+data_genome_tags <- read.csv(file_path2)
+data_genome_scores <- read.csv(file_path1)
+```
+
+
+```{r}
+# Initial Data Preprocessing
+# Drop the timestamp column in data_rating and data_tag
+data_rating <- data_rating %>% select(-timestamp)
+data_tag <- data_tag %>% select(-timestamp)
+
+# Check the unique movieId count in data_rating
+length(unique(data_rating$movieId))
+
+# Merge data_movie and data_rating on movieId
+df <- merge(data_movie, data_rating, by = "movieId")
+
+# Check for missing values
+colSums(is.na(df))
+
+# Filter for movies with "Comedy" in genres
+df_comedy <- df %>% filter(genres == "Comedy")
+
+# Count the unique titles in df
+length(unique(df$title))
+
+# Get the top 10 most frequent movie titles
+title_counts <- table(df$title)
+title_counts[order(-title_counts)][1:10]
+
+# Find titles with an average rating of exactly 5.0
+high_rating_titles <- df %>% group_by(title) %>% 
+  summarize(mean_rating = mean(rating)) %>%
+  filter(mean_rating == 5.0) %>%
+  arrange(desc(mean_rating))
+
+# Check for duplicates in the dataframe
+df_duplicates <- df %>% filter(duplicated(.))
+
+# Check data types in the dataset
+str(df)
+
+# Check for missing values in data_link and data_tag
+colSums(is.na(data_link))
+colSums(is.na(data_tag))
+
+# View most common tags in data_tag
+tag_counts <- table(data_tag$tag)
+tag_counts[order(-tag_counts)][1:10]
+
+# Filter data_movie for a specific movieId (example: 497)
+data_movie_497 <- data_movie %>% filter(movieId == 497)
+
+# Merging to Calculate Average Ratings Per User
+# Calculate average rating per userId
+df7 <- data_rating %>%
+  group_by(userId) %>%
+  summarize(avg_rating = mean(rating))
+
+# Merge df7 with data_tag on userId
+df8 <- merge(df7, data_tag, by = "userId")
+
+# Merge df8 with data_movie on movieId
+df10 <- merge(data_movie, df8, by = "movieId")
+
+# Merge df10 with data_link on movieId
+df11 <- merge(df10, data_link, by = "movieId")
+
+# Check for missing values in the final merged dataset
+colSums(is.na(df11))
+
+# Merge genome_tags and genome_scores on tagId
+df9 <- merge(data_genome_tags, data_genome_scores, by = "tagId")
+
+# View most common tags in df9
+tag_counts_genome <- table(df9$tag)
+tag_counts_genome[order(-tag_counts_genome)][1:10]
+
+# Extract the unique tags from data_genome_tags
+unique_genome_tags <- unique(data_genome_tags$tag)[1:50]
+
+
+```
+```{r}
+# Final DataFrame
+# Save the final merged dataset as a CSV file
+# Save the final DataFrame to the specified path
+write.csv(df11, "C:/My Space/College files/sem3/Data Mining/project/code copies/final_dataset.csv", row.names = FALSE)
+
+```
+
