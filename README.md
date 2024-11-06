@@ -4,16 +4,16 @@ Welcome to the Movie Recommendation System project! 🎬
 
 This repository contains the code and methodology to build a recommendation engine using the MovieLens dataset, providing personalized movie recommendations based on user preferences, past ratings, and collaborative insights.
 
-🌟 Project Overview:
+🌟 **Project Overview:**
 
 The objective of this project is to develop a recommendation engine capable of generating tailored movie recommendations. Using machine learning and data mining techniques, this system can predict which movies users may enjoy based on their previous interactions and preferences.
 
-Features:<br>
+**Features:** <br>
 •Dataset: MovieLens dataset with 20 million ratings, including metadata, genres, and user tags.<br>
 •Algorithms: Collaborative filtering, content-based filtering, and hybrid models.<br>
 •Evaluation: Custom similarity-based scoring for accurate recommendations.<br>
 
-📂 Dataset
+📂 **Dataset**
 
 We’re using the MovieLens 20M Dataset, which contains:<br>
 •	20 million ratings and 465,564 tag applications across 27,278 movies.<br>
@@ -21,7 +21,7 @@ We’re using the MovieLens 20M Dataset, which contains:<br>
 
 This rich dataset enables the application of various recommendation algorithms, each taking a unique approach to understanding and predicting user preferences.
 
-🔍 Methodology:
+🔍 ### **Methodology:**
 
 1.	Data Loading and Preprocessing<br>
     o	Import datasets, merge as needed, and handle missing values.<br>
@@ -34,20 +34,20 @@ This rich dataset enables the application of various recommendation algorithms, 
     o	Custom similarity-based scoring to gauge accuracy and effectiveness.<br>
     o	Assess model performance through metrics like precision, recall, and mean squared error (MSE).<br>
 
-📊 Project Structure:<br>
+📊 **Project Structure:** <br>
 •	Data: movie.csv, rating.csv, tag.csv, link.csv, genome_tags.csv, genome_score.csv - the main datasets used in this project.<br>
 •	Scripts: Core R and Python scripts for data processing, model training, and evaluation.<br>
 •	Notebooks: Contains exploratory data analysis (EDA) and model experimentation.<br>
 
-💻 Getting Started<br>
-Prerequisites<br>
+💻 ### **Getting Started**<br>
+**Prerequisites**<br>
 To run this project, you’ll need:<br>
 •	R (Version 4.0 or later)<br>
 •	Python (Optional, for cross-verification or additional analysis)<br>
 •	R Libraries: dplyr, ggplot2, recommenderlab, tidyr<br>
 •	Python Libraries: pandas, numpy, scikit-learn, matplotlib<br>
 
-Installation:<br>
+**Installation:** <br>
     - Clone the repository and install necessary packages.<br>
     - bash<br>
     - Copy code<br>
@@ -64,33 +64,33 @@ Copy code
 ### Example: Running collaborative filtering in R
 source("collaborative_filtering.R")
 
-🚀 Usage
+🚀 **Usage**
 1.	Load Dataset: Load movie.csv, rating.csv, and tag.csv.
 2.	Run Model: Choose a recommendation model and execute the corresponding R script.
 3.	Get Recommendations: Input user ID to receive a list of recommended movies.
 
-📈 Results and Insights
-Explore various recommendation models and compare results:
-•	Collaborative Filtering: Effective for users with detailed interaction histories.
-•	Content-Based Filtering: Ideal for cold-start users by recommending similar items.
-•	Hybrid Model: Provides comprehensive recommendations by leveraging both user interactions and movie metadata.
+📈 **Results and Insights**
+Explore various recommendation models and compare results:<br>
+•	Collaborative Filtering: Effective for users with detailed interaction histories.<br>
+•	Content-Based Filtering: Ideal for cold-start users by recommending similar items.<br>
+•	Hybrid Model: Provides comprehensive recommendations by leveraging both user interactions and movie metadata.<br>
 
-📝 Future Improvements
-Some ideas for future development:
-•	Integrate additional data sources for enhanced personalization.
-•	Implement neural network-based methods for improved accuracy.
-•	Build an interactive web interface for real-time recommendations.
+📝 **Future Improvements**
+Some ideas for future development:<br>
+•	Integrate additional data sources for enhanced personalization.<br>
+•	Implement neural network-based methods for improved accuracy.<br>
+•	Build an interactive web interface for real-time recommendations.<br>
 
-🤝 Contributing
-We welcome contributions! If you find a bug or have an idea to improve the recommendation engine:
-1.	Fork the repository.
-2.	Create a feature branch (git checkout -b feature/YourFeature).
-3.	Commit your changes (git commit -m 'Add your feature').
-4.	Push to the branch (git push origin feature/YourFeature).
-5.	Open a pull request.
+🤝 **Contributing**
+We welcome contributions! If you find a bug or have an idea to improve the recommendation engine:<br>
+> 1.	Fork the repository.<br>
+> 2.	Create a feature branch (git checkout -b feature/YourFeature).<br>
+> 3.	Commit your changes (git commit -m 'Add your feature').<br>
+> 4.	Push to the branch (git push origin feature/YourFeature).<br>
+> 5.	Open a pull request.<br>
 
-📄 License
+📄 **License**
 This project is licensed under the MIT License.
 
-📬 Contact
+📬 **Contact**
 Feel free to reach out if you have questions or suggestions.
