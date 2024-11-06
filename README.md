@@ -10,15 +10,17 @@ The objective of this project is to develop a recommendation engine capable of g
 
 Features
 
-    •	Dataset: MovieLens dataset with 20 million ratings, including metadata, genres, and user tags.
-    •	Algorithms: Collaborative filtering, content-based filtering, and hybrid models.
-    •	Evaluation: Custom similarity-based scoring for accurate recommendations.
+    •Dataset: MovieLens dataset with 20 million ratings, including metadata, genres, and user tags.
+    •Algorithms: Collaborative filtering, content-based filtering, and hybrid models.
+    •Evaluation: Custom similarity-based scoring for accurate recommendations.
 
 📂 Dataset
 
 We’re using the MovieLens 20M Dataset, which contains:
+
 •	20 million ratings and 465,564 tag applications across 27,278 movies.
 •	Information on user preferences, tags, genres, and more.
+
 This rich dataset enables the application of various recommendation algorithms, each taking a unique approach to understanding and predicting user preferences.
 
 🔍 Methodology:
