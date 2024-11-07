@@ -1,0 +1,115 @@
+
+```{r}
+# Load the datasets
+movie <- read.csv("movie.csv")
+rating <- read.csv("rating.csv")
+
+# Filter the ratings dataset for ratings greater than 3
+rating <- subset(rating, rating > 3)
+
+# Merge the datasets
+merged_data <- merge(movie, rating, by = "movieId")
+
+# Create a list of genres
+genre_list <- unique(unlist(strsplit(merged_data$genres, "\\|")))
+
+# Create a matrix to store the association rules
+genre_matrix <- matrix(0, nrow = length(genre_list), ncol = length(genre_list))
+rownames(genre_matrix) <- genre_list
+colnames(genre_matrix) <- genre_list
+
+# Populate the matrix with association rules
+for (i in 1:nrow(merged_data)) {
+  genres <- strsplit(merged_data$genres[i], "\\|")[[1]]
+  for (genre1 in genres) {
+    for (genre2 in genres) {
+      if (genre1 != genre2) {
+        genre_matrix[genre1, genre2] <- genre_matrix[genre1, genre2] + 1
+      }
+    }
+  }
+}
+
+# Get the top 5 movie recommendations
+get_recommendations <- function(user_id, input_movies, top_n = 5) {
+  # Get the genres of the input movies
+  input_genres <- unique(unlist(strsplit(movie$genres[movie$title %in% input_movies], "\\|")))
+
+  # Get the associated genres
+  associated_genres <- colnames(genre_matrix)[genre_matrix[input_genres, ] > 3]
+
+  # Get the movies with the associated genres
+  recommended_movies <- movie$title[movie$genres %in% associated_genres]
+
+  # Filter the recommended movies for those rated by the user with rating greater than 3
+  recommended_movies <- merged_data$title[merged_data$title %in% recommended_movies & merged_data$userId == user_id]
+
+  # Return the top_n recommendations
+  return(head(recommended_movies, top_n))
+}
+
+# Prompt the user for input
+user_id <- readline(prompt = "Enter the user ID: ")
+input_movies <- readline(prompt = "Enter 5 movie names separated by commas: ")
+
+# Split the input movies into a vector
+input_movies <- strsplit(input_movies, ",")[[1]]
+
+# Get the recommendations
+recommendations <- get_recommendations(user_id, input_movies)
+
+# Print the recommendations
+print(recommendations)
+
+```
+
+
+```{r}
+# Load the datasets
+movie <- read.csv("movie.csv")
+rating <- read.csv("rating.csv")
+
+# Filter the ratings dataset for ratings greater than 3
+rating <- subset(rating, rating > 3)
+
+# Merge the datasets
+merged_data <- merge(movie, rating, by = "movieId")
+
+# Create a list of genres
+genre_list <- unique(unlist(strsplit(merged_data$genres, "\\|")))
+
+# Create a matrix to store the association rules
+genre_matrix <- matrix(0, nrow = length(genre_list), ncol = length(genre_list))
+rownames(genre_matrix) <- genre_list
+colnames(genre_matrix) <- genre_list
+
+# Populate the matrix with association rules
+for (i in 1:nrow(merged_data)) {
+    genres <- strsplit(merged_data$genres[i], "\\|")[[1]]
+    for (genre1 in genres) {
+        for (genre2 in genres) {
+            if (genre1 != genre2) {
+                genre_matrix[genre1, genre2] <- genre_matrix[genre1, genre2] + 1
+            }
+        }
+    }
+}
+
+# Get the top 5 movie recommendations
+get_recommendations <- function(user_id, input_movies, top_n = 5) {
+    # Get the genres of the input movies
+    input_genres <- unique(unlist(strsplit(movie$genres[movie$title %in% input_movies], "\\|")))
+
+    # Get the associated genres
+    associated_genres <- colnames(genre_matrix)[genre_matrix[input_genres, ] > 3]
+
+    # Get the movies with the associated genres
+    recommended_movies <- movie$title[movie$genres %in% associated_genres]
+
+    # Filter the recommended movies for those rated by the user with rating greater than 3
+    recommended_movies <- merged_data$title[merged_data$title %in% recommended_movies & merged_data$userId == user_id]
+
+    # Return the top_n recommendations
+    return(head(recommended_movies, top_n))
+}
+```
