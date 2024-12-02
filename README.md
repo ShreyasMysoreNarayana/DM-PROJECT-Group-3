@@ -30,9 +30,7 @@ This rich dataset enables the application of various recommendation algorithms, 
     o	Collaborative Filtering: Recommends movies based on similar users’ preferences.<br>
     o	Content-Based Filtering: Uses movie metadata (e.g., genre) to recommend similar items.<br>
     o	Hybrid Model: Combines collaborative and content-based methods for more robust recommendations.<br>
-3.	Evaluation<br>
-    o	Custom similarity-based scoring to gauge accuracy and effectiveness.<br>
-    o	Assess model performance through metrics like precision, recall, and mean squared error (MSE).<br>
+    o   Data Mining: Assosiation Rule Mining is also used for the recommendations.<br>
 
 📊 **Project Structure:** <br>
 •	Data: movie.csv, rating.csv, tag.csv, link.csv, genome_tags.csv, genome_score.csv - the main datasets used in this project.<br>
@@ -55,19 +53,12 @@ To run this project, you’ll need:<br>
     - cd DM-PROJECT<br>
     - Running the Code<br>
 
-Open the R scripts or Jupyter notebooks to explore:<br>
-•	data_processing.R: Loads and cleans datasets.<br>
-•	collaborative_filtering.R: Builds collaborative filtering models.<br>
-•	content_based_filtering.R: Develops content-based models using movie features.<br>
-
 Copy code
-### Example: Running collaborative filtering in R
-source("collaborative_filtering.R")
 
 🚀 **Usage**
-1.	Load Dataset: Load movie.csv, rating.csv, and tag.csv.
-2.	Run Model: Choose a recommendation model and execute the corresponding R script.
-3.	Get Recommendations: Input user ID to receive a list of recommended movies.
+1.	Load Dataset: Load the dataset (final_df.csv) from the drive link.  
+2.	Run Model: Open the app_841.R file and WWW folders with images and save in a same folder.
+3.	Get Recommendations: Run the app_841.R in Rstudio and get the movie recommendations.
 
 📈 **Results and Insights**
 Explore various recommendation models and compare results:<br>
